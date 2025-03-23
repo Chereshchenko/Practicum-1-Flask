@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+
+{% block title %}Contact{% endblock %}
+
+{% block content %}
+    <h2>Контакты</h2>
+    <p>Тебе грустно? Тогда напиши нам ;)</p>
+
+{% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+            <ul>
+            {% for category, message in messages %}
+                <li class="{{ category }}">{{ message }}</li>
+            {% endfor %}
+            </ul>
+        {% endif %}
+    {% endwith %}
+
+    <form action="/submit" method="POST">
+        <label for="name">Как тебя зовут?</label><br>
+        <input type="text" id="name" name="name" required><br><br>
+
+        <label for="email">На какую почту можно написать?</label><br>
+        <input type="email" id="email" name="email" required><br><br>
+
+        <label for="message">Что у тебя случилось?</label><br>
+        <textarea id="message" name="message" rows="5" cols="33" required></textarea><br><br>
+
+        <button type="submit">Отправить</button>
+    </form>
+{% endblock %}

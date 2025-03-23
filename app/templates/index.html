@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+
+{% block title %}Home{% endblock %}
+
+{% block content %}
+    <h2>Добро пожаловать на наш сайт!</h2>
+    <p>На данном сайте мы поможем найти тебе собственное счастье :)</p>
+    <img src="{{ url_for('static', filename='img/logo.png') }}" alt="logo">
+{% endblock %}
