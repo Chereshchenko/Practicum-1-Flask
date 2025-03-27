@@ -28,4 +28,10 @@
 
         <button type="submit">Отправить</button>
     </form>
+
+    <p>Информация для связи :)</p>
+    <p>Имя: {{ info.name }}</p>
+    <p>Улица: {{ info.address.street }}</p>
+    <p>Город: {{ info.address.city }}</p>
+    <p>Почтовый индекс: {{ info.address.zip }}</p>
 {% endblock %}

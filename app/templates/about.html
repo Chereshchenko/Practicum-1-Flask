@@ -11,4 +11,10 @@
         <li>Поможем организовать день рождение или любой другой праздник</li>
         <li>Познакомим с единомышленниками</li>
     </ul>
+
+    <ul>
+        {% for team in team_list %}
+            <li>{{ team.name }} - {{ team.role }}</li>
+        {% endfor %}
+    </ul>
 {% endblock %}
